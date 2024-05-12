@@ -1,7 +1,15 @@
 # BIT-DataMining
 
-## Content-Based
-### Step-1: get user feature embeddings
+## project
+本项目的系统所在
+### step-1:在web中开启前端
+### step-2:在server中开启后端
+
+## src
+两个推荐算法：协同过滤算法和使用gte做embedding的基于内容推荐算法
+### Collaborative-Filtering
+### Content-Based
+#### Step-1: get user feature embeddings
 ```shell
 CUDA_VISIBLE_DEVICES=x python vectorize.py \
     --embed-model /path/to/your/embed/model/ckpt \
@@ -9,7 +17,7 @@ CUDA_VISIBLE_DEVICES=x python vectorize.py \
     --output-dir /dir/used/to/store/embeds
 ```
 
-### Step-2: get recommendations for single user
+#### Step-2: get recommendations for single user
 ```shell
 CUDA_VISIBLE_DEVICES=x python content_based_matching.py \
     --user-file /single/target/user/file \
@@ -17,7 +25,7 @@ CUDA_VISIBLE_DEVICES=x python content_based_matching.py \
     --num-recommend x
 ```
 
-### Output Format:
+#### Output Format:
 ```plain text
 [!] target user: JacksonHinkle
 Preference ranking:
